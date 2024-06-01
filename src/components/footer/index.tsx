@@ -9,6 +9,7 @@ interface NavLink {
 }
 
 const NAV_LINKS: NavLink[] = [
+  { href: "/", label: "ホーム" },
   { href: "/about", label: "理念" },
   { href: "/product", label: "プロダクト" },
   { href: "/team", label: "チーム" },
