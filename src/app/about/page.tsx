@@ -1,81 +1,36 @@
 import Image from "next/image";
 import topImage from "./image/top-image.png";
-import CenteredTextOverlay from "@/components/top-image/CenteredTextOverlay";
+import visionImage from "./image/vision-image.png";
+import missionImage from "./image/mission-image.png";
+import valueImage from "./image/value-image.png";
+import CenteredTextOverlay from "@/components/VerticalItem/CenteredTextOverlay";
+import Section from "@/components/section/Section";
 
 export default function About() {
   return (
-    <main className="flex min-h-screen w-full flex-col items-center justify-between px-[50px]">
-      <CenteredTextOverlay topImage={topImage} text="私たちについて" />
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+    <main className="flex w-full flex-col items-center justify-between px-[50px]">
+      <CenteredTextOverlay topImage={topImage} text="理念" />
+      <Section
+        title="ビジョン"
+        id="bision"
+        heading={`人から人へ繋がる\n新たな未来を生み出す`}
+        description={`私たちは、日々の生活の中で人々が互いにつながり、支え合うことで、限りない可能性を開花させる新たな社会を創造します。\nテクノロジーを通じて人々が本来持っている創造力や繋がりを強化し、それぞれの個性が互いを豊かにする未来を目指します。`}
+        image={visionImage}
+      />
+      <Section
+        title="ミッション"
+        id="mission"
+        heading={`日常に新たな選択肢をもたらし、\n生活に彩りを`}
+        description={`私たちのコミュニティは、日常生活に新しい選択肢（サービス）を提供することで、人々の生活に多様性と豊かさをもたらします。\n技術の力を利用して、日々の生活に彩りを加える新しい方法を探求し、それを共有することで、人々の生活をより充実したものにします。`}
+        image={missionImage}
+      />
+      <Section
+        title="バリュ―"
+        id="value"
+        heading={`挑戦しよう\n超えよう\nいつだって楽しく`}
+        description={""}
+        image={valueImage}
+      />
     </main>
   );
 }
