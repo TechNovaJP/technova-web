@@ -1,14 +1,6 @@
 import type { Metadata } from "next";
-import { Gothic_A1, Rubik } from "next/font/google";
 
 import "./globals.css";
-
-const rubik = Rubik({ subsets: ["latin"], variable: "--logo-font" });
-const gothicA1 = Gothic_A1({
-  weight: ["100", "200", "300", "500", "600", "700", "800", "900"],
-  subsets: ["latin"],
-  variable: "--text-font",
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,9 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${rubik.variable} ${gothicA1.variable}`}>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
