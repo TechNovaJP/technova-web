@@ -2,9 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+const NAV_LINKS = [
+  { href: "/mission", label: "理念" },
+  { href: "/product", label: "プロダクト" },
+  { href: "/team", label: "チーム" },
+  { href: "/info", label: "お知らせ" },
+  { href: "/#company", label: "概要" },
+  { href: "/contact", label: "お問い合わせ" },
+];
+
 const Header = () => {
   return (
-    <header className="w-full flex flex-col pt-8 pb-5 items-center p-4 bg-white d">
+    <header className="w-full flex flex-col pt-8 pb-5 items-center p-4 bg-white shadow-md">
       <Link href="/" className="mb-8">
         <div className="flex items-center">
           <Image
@@ -20,42 +29,15 @@ const Header = () => {
         </div>
       </Link>
       <nav className="flex items-center justify-center gap-10 font-text">
-        <Link
-          href="/mission"
-          className="text-base tracking-wider font-bold hover:text-[#050f77] border-b-2 border-transparent hover:border-[#050f77] pb-1"
-        >
-          理念
-        </Link>
-        <Link
-          href="/product"
-          className="text-base tracking-wider font-bold hover:text-[#050f77] border-b-2 border-transparent hover:border-[#050f77] pb-1"
-        >
-          プロダクト
-        </Link>
-        <Link
-          href="/team"
-          className="text-base tracking-wider font-bold hover:text-[#050f77] border-b-2 border-transparent hover:border-[#050f77] pb-1"
-        >
-          チーム
-        </Link>
-        <Link
-          href="/info"
-          className="text-base tracking-wider font-bold hover:text-[#050f77] border-b-2 border-transparent hover:border-[#050f77] pb-1"
-        >
-          お知らせ
-        </Link>
-        <Link
-          href="/#company"
-          className="text-base tracking-wider font-bold hover:text-[#050f77] border-b-2 border-transparent hover:border-[#050f77] pb-1"
-        >
-          概要
-        </Link>
-        <Link
-          href="/contact"
-          className="text-base tracking-wider font-bold hover:text-[#050f77] border-b-2 border-transparent hover:border-[#050f77] pb-1"
-        >
-          お問い合わせ
-        </Link>
+        {NAV_LINKS.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className="text-base tracking-wider font-bold hover:text-[#050f77] border-b-2 border-transparent hover:border-[#050f77] pb-1"
+          >
+            {link.label}
+          </Link>
+        ))}
       </nav>
     </header>
   );
