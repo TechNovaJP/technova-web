@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 const NAV_LINKS = [
-  { href: "/mission", label: "理念" },
+  { href: "/about", label: "理念" },
   { href: "/product", label: "プロダクト" },
   { href: "/team", label: "チーム" },
   { href: "/info", label: "お知らせ" },
