@@ -39,7 +39,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ toggleMenu, isOpen }) => {
           Tech Nova
         </h1>
       </Link>
-      <div className="flex items-center">
+      <div className="flex items-center  font-text">
         <button onClick={toggleMenu} className="text-[#333333] lg:hidden">
           {isOpen ? (
             <X size={32} className="fixed z-50 top-4 right-4" />
@@ -80,7 +80,7 @@ const DesktopNav: React.FC = () => {
             width={44}
             height={44}
           />
-          <h1 className="text-2xl text-[#333333] font-black font-logo">
+          <h1 className="text-[22px] text-[#333333] font-black font-logo">
             Tech Nova
           </h1>
         </div>
