@@ -4,7 +4,40 @@ import topImage from "./image/top-image.png";
 export default function About() {
   return (
     <main className="flex min-h-screen w-full flex-col items-center justify-between px-[50px]">
-      <Image src={topImage} alt="Top image" priority className="rounded-lg" />
+      <div className="w-full relative">
+        <Image
+          src={topImage}
+          alt="Top image"
+          priority
+          className="relative rounded-lg"
+        />
+        <div className="absolute rounded-sm top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-2 pb-5 pt-3 bg-blur-lg text-white bg-[#000000B3] w-fit">
+          <p className="[writing-mode:vertical-rl] font-black text-[18px]">
+            <span className="[writing-mode:horizontal-tb] h-4 my-[3px] ">
+              私
+            </span>
+            <span className="[writing-mode:horizontal-tb] h-4 my-[3px]">
+              た
+            </span>
+            <span className="[writing-mode:horizontal-tb] h-4 my-[3px] ">
+              ち
+            </span>
+            <span className="[writing-mode:horizontal-tb] h-4 my-[3px]">
+              に
+            </span>
+            <span className="[writing-mode:horizontal-tb] h-4 my-[3px] ">
+              つ
+            </span>
+            <span className="[writing-mode:horizontal-tb] h-4 my-[3px] ">
+              い
+            </span>
+            <span className="[writing-mode:horizontal-tb] h-4 my-[3px] ">
+              て
+            </span>
+          </p>
+        </div>
+      </div>
+
       <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
         <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
