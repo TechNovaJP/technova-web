@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 import Header from "./component/header";
+import ClientOnly from "./component/ClientOnly";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
+        <ClientOnly>
+          <Header />
+        </ClientOnly>
         {children}
       </body>
     </html>
