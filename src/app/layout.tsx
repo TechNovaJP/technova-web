@@ -6,6 +6,7 @@ import Footer from "@/components/footer";
 import LeftFixedHeader from "@/components/header/LeftFixedHeader";
 import RightFixedHeader from "@/components/header/RightFixedHeader";
 import Header from "@/components/header/Header";
+import ClientOnly from "@/components/ClientOnly/ClientOnly";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,11 +21,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <LeftFixedHeader />
-        <RightFixedHeader />
-        <Header />
+        <ClientOnly>
+          <LeftFixedHeader />
+          <RightFixedHeader />
+          <Header />
+        </ClientOnly>
         {children}
-        <Footer />
+        <ClientOnly>
+          <Footer />
+        </ClientOnly>
       </body>
     </html>
   );
