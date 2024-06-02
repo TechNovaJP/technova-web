@@ -2,11 +2,10 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 
-import Footer from "@/components/footer";
+import Footer from "@/components/footer/Footer";
 import LeftFixedHeader from "@/components/header/LeftFixedHeader";
 import RightFixedHeader from "@/components/header/RightFixedHeader";
 import Header from "@/components/header/Header";
-import ClientOnly from "@/components/ClientOnly/ClientOnly";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,15 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ClientOnly>
-          <LeftFixedHeader />
-          <RightFixedHeader />
-          <Header />
-        </ClientOnly>
+        <LeftFixedHeader />
+        <RightFixedHeader />
+        <Header />
         {children}
-        <ClientOnly>
-          <Footer />
-        </ClientOnly>
+        <Footer />
       </body>
     </html>
   );
