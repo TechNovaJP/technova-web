@@ -3,7 +3,7 @@ import CenteredTextOverlay from "@/components/VerticalItem/CenteredTextOverlay";
 import topImage from "./image/top-image.png";
 import VerticalText from "@/components/VerticalItem/VerticalText";
 import { getProducts } from "../../../libs/newt";
-import { Product } from "../../../types/products";
+import type { Product } from "../../../types/products";
 
 function toFullWidth(num: number): string {
   return num
