@@ -20,7 +20,7 @@ const NAV_LINKS: NavLink[] = [
 
 const Footer: React.FC = () => {
   return (
-    <footer className="w-full flex flex-col  pt-12 items-center p-4 bg-[#323232] ">
+    <footer className="w-full z-30 flex flex-col pt-12 items-center p-4 bg-[#323232] relative">
       <nav className="hidden md:flex items-center justify-center gap-10 font-text ">
         {NAV_LINKS.map((link) => (
           <Link
