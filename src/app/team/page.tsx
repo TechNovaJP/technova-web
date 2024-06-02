@@ -33,7 +33,7 @@ const DesktopNav: React.FC<MemberProps> = ({ users }) => {
   );
 };
 
-export default async function Product() {
+export default async function Team() {
   const users = await getUser();
   console.log(users);
   return (
