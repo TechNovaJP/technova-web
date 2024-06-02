@@ -8,7 +8,7 @@ import Section from "@/components/section/Section";
 
 export default function About() {
   return (
-    <main className="flex w-full flex-col items-center justify-between px-[50px]">
+    <main className="flex w-full flex-col items-center justify-between sm:px-[50px] pr-[50px]">
       <CenteredTextOverlay topImage={topImage} text="理念" />
       <Section
         title="ビジョン"
