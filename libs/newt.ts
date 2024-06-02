@@ -2,6 +2,7 @@ import "server-only";
 import { cache } from "react";
 import { createClient } from "newt-client-js";
 import { Product } from "../types/products";
+import { Member } from "../types/member";
 
 const client = createClient({
   spaceUid: process.env.NEWT_SPACE_UID + "",
@@ -23,6 +24,27 @@ export const getProducts = cache(async () => {
         "coverImage",
         "member",
         "tags",
+      ],
+    },
+  });
+  return items;
+});
+
+export const getUser = cache(async () => {
+  const { items } = await client.getContents<Member>({
+    appUid: "tech-nova",
+    modelUid: "member",
+    query: {
+      select: [
+        "_id",
+        "_sys",
+        "fullName",
+        "slug",
+        "graduationYear",
+        "biography",
+        "profileImage",
+        "x",
+        "github",
       ],
     },
   });
