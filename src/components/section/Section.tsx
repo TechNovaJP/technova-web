@@ -22,11 +22,11 @@ const Section: React.FC<SectionProps> = ({
       className="flex-col sm:py-24 sm:px-10 py-16 pl-4 pr-3 w-full flex items-start"
     >
       <VerticalText text={title} />
-      <div className="sm:px-20  pl-10 ">
+      <div className="sm:px-20  pl-16 ">
         <h2 className="whitespace-pre-line sm:mb-10 mb-6 tracking-widest lg:text-4xl md:text-[28px] text-xl font-black leading-relaxed">
           {heading}
         </h2>
-        <p className="whitespace-pre-line mb-12 sm:text-base text-xs tracking-[3px] ">
+        <p className="whitespace-pre-line mb-12  text-xs tracking-[3px] ">
           {description}
         </p>
         <Image
