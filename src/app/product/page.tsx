@@ -19,37 +19,41 @@ interface ProductsProps {
 const MobileNav: React.FC<ProductsProps> = ({ products }) => {
   return (
     <main className="flex min-h-screen  w-full flex-col items-center  pr-[50px] pb-28 font-text sm:hidden">
-      <CenteredTextOverlay topImage={topImage} text="理念" />
-      {products.map((product, index) => (
-        <>
-          <div className="flex-col pt-16 pb-2 pl-4 pr-3 w-full flex items-start">
-            <VerticalText text={toFullWidth(index + 1)} />
-          </div>
-          <div className="flex flex-col w-full pl-14 ">
-            <p className="text-xl font-bold -mt-[30px] text-[#333333] pb-4">
-              {product.title}
-            </p>
-            <p className="text-xs text-[#c0bcbc] pb-4 truncate">
-              {product.description}
-            </p>
-            <div className="grid grid-cols-3 gap-1 w-full">
-              {product.coverImage.map((image, imageIndex) => (
-                <div key={imageIndex} className="relative w-full  pb-[56.25%]">
-                  <Image
-                    src={image.src}
-                    alt={image.altText || "Cover Image"}
-                    fill
-                    className="object-contain border rounded-xl"
-                  />
-                </div>
-              ))}
+      <CenteredTextOverlay topImage={topImage} text="プロダクト" />
+      <div className="h-16    " />
+      <div className="w-full pl-8 pr-3">
+        {products.map((product, index) => (
+          <div
+            key={product._id}
+            className="flex flex-col py-12 border-t px-5  w-full   hover:border hover:shadow-md hover:rounded-lg"
+          >
+            <div className=" flex-col flex items-start">
+              <VerticalText text={toFullWidth(index + 1)} />
+            </div>
+            <div className="flex flex-col w-full -mt-6 pl-10 pr-3">
+              <p className="text-2xl font-bold  pb-4">{product.title}</p>
+              <p className="text-xs text-[#c0bcbc] pb-6 truncate">
+                {product.description}
+              </p>
+              <div className="grid grid-cols-3 gap-2 w-full">
+                {product.coverImage.map((image, imageIndex) => (
+                  <div key={imageIndex} className="relative aspect-video">
+                    <Image
+                      src={image.src}
+                      alt={image.altText || "Cover Image"}
+                      fill
+                      className="object-contain border rounded-xl"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-          <div className="w-full pl-8 pr-[2px] pt-12">
-            <div className="w-full h-[1px] bg-slate-200 rounded-xl " />
-          </div>
-        </>
-      ))}
+        ))}
+        <div className="w-full ">
+          <div className="w-full h-[0.3px] bg-slate-200 rounded-xl " />
+        </div>
+      </div>
     </main>
   );
 };
@@ -57,32 +61,38 @@ const MobileNav: React.FC<ProductsProps> = ({ products }) => {
 const DesktopNav: React.FC<ProductsProps> = ({ products }) => {
   return (
     <main className="sm:flex w-full flex-col items-center justify-between sm:px-[50px] pr-[50px] pb-28 font-text hidden ">
-      <CenteredTextOverlay topImage={topImage} text="理念" />
-      {products.map((product, index) => (
-        <>
-          <div className="flex-col pt-24 pb-6 px-10 w-full flex items-start">
-            <VerticalText text={toFullWidth(index + 1)} />
-          </div>
-          <div className="flex flex-col w-full pl-20 pr-8">
-            <p className="text-2xl font-bold pb-8">{product.title}</p>
-            <div className="grid grid-cols-3 gap-2 w-full">
-              {product.coverImage.map((image, imageIndex) => (
-                <div key={imageIndex} className="relative aspect-video">
-                  <Image
-                    src={image.src}
-                    alt={image.altText || "Cover Image"}
-                    fill
-                    className="object-contain border rounded-xl"
-                  />
-                </div>
-              ))}
+      <CenteredTextOverlay topImage={topImage} text="プロダクト" />
+      <div className="h-16    " />
+      <div className="w-full p-10">
+        {products.map((product, index) => (
+          <div className="flex flex-col py-12 border-t px-6   w-full hover:border hover:shadow-md hover:rounded-lg">
+            <div className=" flex-col flex items-start">
+              <VerticalText text={toFullWidth(index + 1)} />
+            </div>
+            <div className="flex flex-col w-full -mt-7 pl-12 pr-3">
+              <p className="text-2xl font-bold  pb-4">{product.title}</p>
+              <p className="text-xs text-[#c0bcbc] pb-6 truncate">
+                {product.description}
+              </p>
+              <div className="grid grid-cols-3 gap-2 w-full">
+                {product.coverImage.map((image, imageIndex) => (
+                  <div key={imageIndex} className="relative aspect-video">
+                    <Image
+                      src={image.src}
+                      alt={image.altText || "Cover Image"}
+                      fill
+                      className="object-contain border rounded-xl"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-          <div className="w-full pl-12 pr-4 pt-16">
-            <div className="w-full h-[1px] bg-slate-200 rounded-xl " />
-          </div>
-        </>
-      ))}
+        ))}
+        <div className="w-full ">
+          <div className="w-full h-[0.3px] bg-slate-200 rounded-xl " />
+        </div>
+      </div>
     </main>
   );
 };

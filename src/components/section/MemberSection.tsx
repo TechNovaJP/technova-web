@@ -64,8 +64,9 @@ const DesktopNav: React.FC<MemberProps> = ({ users }) => {
             height={150}
           />
           <div className="flex font-bold text-sm text-[#333333] items-center justify-center w-full pt-4">
-            <p>{user.role}</p>
-            <p>{user.graduationYear}</p>
+            <p>
+              <p>{`${user.role} ${user.graduationYear}`}</p>
+            </p>
           </div>
           <p className="text-sm font-bold text-[#333333] pt-1 pb-3">
             {user.fullName}
