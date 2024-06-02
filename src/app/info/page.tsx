@@ -20,7 +20,7 @@ export const formatDate = (dateString: string): string => {
 const MobileNav: React.FC<NewsProps> = ({ news }) => {
   return (
     <main className="flex min-h-screen  w-full flex-col items-center  pr-[50px] pb-28 font-text sm:hidden">
-      <CenteredTextOverlay topImage={topImage} text="理念" />
+      <CenteredTextOverlay topImage={topImage} text="お知らせ" />
       <div className="flex-col pt-16 pb-2 pl-4 pr-3 w-full flex items-start">
         <VerticalText text="お知らせ" />
       </div>
@@ -59,7 +59,7 @@ const MobileNav: React.FC<NewsProps> = ({ news }) => {
 const DesktopNav: React.FC<NewsProps> = ({ news }) => {
   return (
     <main className="sm:flex min-h-screen  w-full flex-col items-center  px-[50px] pb-28 font-text hidden">
-      <CenteredTextOverlay topImage={topImage} text="理念" />
+      <CenteredTextOverlay topImage={topImage} text="お知らせ" />
       <div className="flex-col pt-16 pb-2 pl-4 pr-3 w-full flex items-start">
         <VerticalText text="お知らせ" />
       </div>
