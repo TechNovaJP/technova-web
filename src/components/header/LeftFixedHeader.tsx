@@ -1,8 +1,12 @@
 import React from "react";
 
-const LeftFixedHeader: React.FC = () => {
+const MobileNav: React.FC = () => {
+  return <div className="sm:hidden"></div>;
+};
+
+const DesktopNav: React.FC = () => {
   return (
-    <div className="w-[50px] min-h-screen flex items-center justify-center fixed font-text left-0 font-bold">
+    <div className="w-[50px] min-h-screen sm:flex items-center justify-center fixed font-text left-0 font-bold hidden">
       <p className="[writing-mode:vertical-rl]">
         <span className="[writing-mode:vertical-rl] tracking-widest">
           芝浦工業大学
@@ -18,6 +22,15 @@ const LeftFixedHeader: React.FC = () => {
           コミュニティ
         </span>
       </p>
+    </div>
+  );
+};
+
+const LeftFixedHeader: React.FC = () => {
+  return (
+    <div>
+      <MobileNav />
+      <DesktopNav />
     </div>
   );
 };
