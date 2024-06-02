@@ -1,9 +1,8 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
-import useDevice from "@/hooks/useDevice";
 
 interface NavLink {
   href: string;
@@ -11,6 +10,7 @@ interface NavLink {
 }
 
 const NAV_LINKS: NavLink[] = [
+  { href: "/", label: "ホーム" },
   { href: "/about", label: "理念" },
   { href: "/product", label: "プロダクト" },
   { href: "/team", label: "チーム" },
@@ -26,7 +26,7 @@ interface MobileNavProps {
 
 const MobileNav: React.FC<MobileNavProps> = ({ toggleMenu, isOpen }) => {
   return (
-    <div className="w-full flex items-center justify-between p-4 bg-white">
+    <div className="relative w-full flex items-center justify-between p-4 bg-white sm:hidden">
       <Link href="/" className="flex items-center">
         <Image
           src="/TechNova.png"
@@ -39,15 +39,18 @@ const MobileNav: React.FC<MobileNavProps> = ({ toggleMenu, isOpen }) => {
           Tech Nova
         </h1>
       </Link>
-      <div className="flex items-center  font-text">
-        <button onClick={toggleMenu} className="text-[#333333] lg:hidden">
-          {isOpen ? (
-            <X size={32} className="fixed z-50 top-4 right-4" />
-          ) : (
-            <Menu size={32} />
-          )}
-        </button>
-      </div>
+
+      <button
+        onClick={toggleMenu}
+        className="text-[#333333] lg:hidden font-text"
+      >
+        {isOpen ? (
+          <X size={32} className="fixed z-50 top-[14px] right-2" />
+        ) : (
+          <Menu size={32} className="fixed top-[14px] right-2" />
+        )}
+      </button>
+
       <div
         className={`fixed top-0 left-0 w-full h-full bg-white bg-opacity-90 z-40 flex flex-col items-center justify-center gap-10  duration-75  transform ${
           isOpen ? "scale-100 opacity-100" : "scale-75 opacity-0"
@@ -70,7 +73,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ toggleMenu, isOpen }) => {
 
 const DesktopNav: React.FC = () => {
   return (
-    <header className="w-full flex flex-col pt-8 pb-5 items-center p-4 bg-white ">
+    <header className="w-full  flex-col pt-8 pb-5 items-center p-4 bg-white sm:flex hidden">
       <Link href="/" className="mb-8">
         <div className="flex items-center">
           <Image
@@ -101,8 +104,6 @@ const DesktopNav: React.FC = () => {
 };
 
 const Header: React.FC = () => {
-  const device = useDevice();
-
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -111,11 +112,8 @@ const Header: React.FC = () => {
 
   return (
     <div>
-      {!device.isMobile ? (
-        <DesktopNav />
-      ) : (
-        <MobileNav toggleMenu={toggleMenu} isOpen={isOpen} />
-      )}
+      <DesktopNav />
+      <MobileNav toggleMenu={toggleMenu} isOpen={isOpen} />
     </div>
   );
 };
