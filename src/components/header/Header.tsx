@@ -15,7 +15,7 @@ const NAV_LINKS: NavLink[] = [
   { href: "/product", label: "プロダクト" },
   { href: "/team", label: "チーム" },
   { href: "/info", label: "お知らせ" },
-  { href: "/#company", label: "概要" },
+  { href: "/#overview", label: "概要" },
   { href: "/contact", label: "お問い合わせ" },
 ];
 
