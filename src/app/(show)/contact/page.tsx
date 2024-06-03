@@ -18,7 +18,7 @@ const ContactForm: React.FC = () => {
           </label>
           <input
             type="text"
-            id="name"
+            name="name"
             placeholder="お名前を入力"
             required
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -34,7 +34,7 @@ const ContactForm: React.FC = () => {
 
           <input
             type="text"
-            id="company"
+            name="company"
             placeholder="会社名・学校名を入力"
             required
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -49,7 +49,7 @@ const ContactForm: React.FC = () => {
           </label>
           <input
             type="email"
-            id="email"
+            name="email"
             placeholder="メールアドレスを入力"
             required
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -64,7 +64,7 @@ const ContactForm: React.FC = () => {
           </label>
           <input
             type="tel"
-            id="phone"
+            name="phone"
             placeholder="電話番号を入力"
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           />
@@ -77,7 +77,7 @@ const ContactForm: React.FC = () => {
             お問い合わせ内容 <span className="text-red-500">必須</span>
           </label>
           <textarea
-            id="message"
+            name="message"
             placeholder="お問い合わせ内容を入力"
             required
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32"
