@@ -30,6 +30,6 @@ export interface Product {
   meta: Meta;
   content: string;
   coverImage: Image[];
-  member: Member;
+  member: Member[];
   tags?: string[];
 }
