@@ -37,7 +37,7 @@ const MobileNav: React.FC<ProductsProps> = ({
             <p className="text-xs text-[#c0bcbc] pb-6 truncate">
               {product.description}
             </p>
-            <div className="grid grid-cols-3 gap-2 w-full">
+            <div className="w-full flex flex-col gap-4">
               {product.coverImage.map((image, imageIndex) => (
                 <div key={imageIndex} className="relative aspect-video">
                   <Image
