@@ -130,7 +130,7 @@ const DesktopNav: React.FC<Props> = ({ news, users, products }) => {
           title="チ―ム"
           id="team"
           users={users}
-          displayIndexes={[0, 1, 2]}
+          displayIndexes={[0, 1, 2, 3, 4, 5, 6]}
           showButton={true}
         />
 

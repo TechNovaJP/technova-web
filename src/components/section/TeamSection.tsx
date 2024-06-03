@@ -40,10 +40,10 @@ const MobileNav: React.FC<TeamProps> = ({
   return (
     <section
       id={id}
-      className="flex-col pt-16 pb-2 pl-4 pr-3 w-full flex items-start sm:hidden"
+      className="flex-col pt-16 pb-2 pl-4 pr-3 w-full flex items-start lg:hidden"
     >
       <VerticalText text={title} />
-      <div className="flex w-full gap-3 flex-col mt-8 pl-10 sm:hidden">
+      <div className="flex w-full gap-3 flex-col mt-8 pl-10 ">
         {displayUsers.map((user) => (
           <div
             key={user._id}
@@ -104,11 +104,11 @@ const DesktopNav: React.FC<TeamProps> = ({
   return (
     <section
       id={id}
-      className="flex-col pt-16 pb-2 pl-4 pr-4 w-full sm:flex items-start hidden"
+      className="flex-col pt-16 pb-2 pl-4 pr-4 w-full lg:flex items-start hidden"
     >
       <VerticalText text={title} />
       <div className="flex w-full gap-3 mt-8 pl-14">
-        {displayUsers.map((user) => (
+        {displayUsers.reverse().map((user) => (
           <div
             key={user._id}
             className="w-fit flex flex-col justify-center items-center bg-white shadow-xl p-2 rounded-md border"
