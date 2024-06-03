@@ -13,7 +13,6 @@ import ProductsSection from "@/components/section/ProductsSection";
 import TeamSection from "@/components/section/TeamSection";
 import InfoSection from "@/components/section/InfoSection";
 import CommunitySection from "@/components/section/CommunitySection";
-import ViewButton from "@/components/Button/ViewButton";
 interface Props {
   news: News[];
   products: Product[];

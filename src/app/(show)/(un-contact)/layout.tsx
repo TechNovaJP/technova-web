@@ -1,5 +1,3 @@
-import type { Metadata } from "next";
-
 import LeftFixedHeader from "@/components/header/LeftFixedHeader";
 import RightFixedHeader from "@/components/header/RightFixedHeader";
 
