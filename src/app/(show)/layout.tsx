@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 
-import "./globals.css";
+import "../globals.css";
 
 import Footer from "@/components/footer/Footer";
-import LeftFixedHeader from "@/components/header/LeftFixedHeader";
-import RightFixedHeader from "@/components/header/RightFixedHeader";
 import Header from "@/components/header/Header";
 
 export const metadata: Metadata = {
@@ -20,8 +18,6 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body>
-        <LeftFixedHeader />
-        <RightFixedHeader />
         <Header />
         {children}
         <Footer />

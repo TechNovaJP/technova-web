@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { News } from "../../types/news";
-import { Product } from "../../types/products";
-import { Member } from "../../types/member";
+import { News } from "../../../../types/news";
+import { Product } from "../../../../types/products";
+import { Member } from "../../../../types/member";
 import topImage from "./image/top-image.png";
-import { getNews, getProducts, getUser } from "../../libs/newt";
+import { getNews, getProducts, getUser } from "../../../../libs/newt";
 import VerticalText from "@/components/VerticalItem/VerticalText";
 import visionImage from "./image/vision-image.png";
 import somaImage from "./image/soma-image.png";

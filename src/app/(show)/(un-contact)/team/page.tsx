@@ -1,7 +1,7 @@
 import CenteredTextOverlay from "@/components/VerticalItem/CenteredTextOverlay";
 import topImage from "./image/top-image.jpg";
-import { getUser } from "../../../libs/newt";
-import { Member } from "../../../types/member";
+import { getUser } from "../../../../../libs/newt";
+import { Member } from "../../../../../types/member";
 import TeamSection from "@/components/section/TeamSection";
 
 interface MemberProps {
