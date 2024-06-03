@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import VerticalText from "../VerticalItem/VerticalText";
 import ViewButton from "../Button/ViewButton";
+import { formatDate } from "@/utils/formatDate";
 
 interface NewsItem {
   _id: string;
@@ -17,15 +18,6 @@ interface InfoProps {
   displayCount?: number;
   showButton?: boolean;
 }
-
-const formatDate = (date: string) => {
-  const options: Intl.DateTimeFormatOptions = {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
-  return new Date(date).toLocaleDateString("ja-JP", options);
-};
 
 const MobileNav: React.FC<InfoProps> = ({ news, title, id, showButton }) => {
   return (
