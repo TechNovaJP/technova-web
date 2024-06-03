@@ -1,8 +1,8 @@
 import React from "react";
 import CenteredTextOverlay from "@/components/VerticalItem/CenteredTextOverlay";
 import topImage from "./image/top-image.png";
-import { getProducts } from "../../../libs/newt";
-import type { Product } from "../../../types/products";
+import { getProducts } from "../../../../../libs/newt";
+import type { Product } from "../../../../../types/products";
 import ProductsSection from "@/components/section/ProductsSection";
 
 interface ProductsProps {
