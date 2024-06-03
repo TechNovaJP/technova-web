@@ -66,7 +66,7 @@ const DesktopNav: React.FC<AboutSectionProps> = ({
     >
       <VerticalText text={title} />
       <div className="pl-14">
-        <h2 className="whitespace-pre-line   sm:mb-10 mb-6 tracking-widest lg:text-4xl md:text-[28px] lg:leading-[50px]  text-xl font-black ">
+        <h2 className="whitespace-pre-line   sm:mb-10 mb-6 tracking-widest lg:text-4xl md:text-[28px] md:leading-10 lg:leading-[50px]  text-xl font-black ">
           {heading}
         </h2>
         <p className="whitespace-pre-line mb-12 text-xs tracking-[3px]">
