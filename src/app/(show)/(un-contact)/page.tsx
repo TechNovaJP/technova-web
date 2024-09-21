@@ -53,7 +53,13 @@ const MobileNav: React.FC<Props> = ({ news, users, products }) => {
         showButton={true}
       />
       {/* チーム */}
-      <TeamSection title="チーム" id="team" users={users} />
+      <TeamSection
+        title="チーム"
+        id="team"
+        users={users}
+        displayIndexes={[0, 1, 2]}
+        showButton={true}
+      />
       {/* お知らせ */}
       <InfoSection
         title="お知らせ"
@@ -69,7 +75,7 @@ const MobileNav: React.FC<Props> = ({ news, users, products }) => {
         image={somaImage}
         description={`私は兄からプログラミングを好きになるきっかけをもらいました。\n
 同様に、私も他の人々にそのようなきっかけを提供したいと思っています。\n
-芝浦工業大学において、プログラミングを好む人々を増やしていきたいです。`}
+芝浦工業大学において、プログラミングが好きな人を増やしたいです！`}
         representative="Soma Takata"
       />
       {/* お問い合わせ */}
@@ -77,8 +83,8 @@ const MobileNav: React.FC<Props> = ({ news, users, products }) => {
         <div className="flex-col pt-16 pb-2 pl-4 pr-3 w-full flex items-start">
           <VerticalText text="お問い合わせ" />
         </div>
-        <div className="pr-8 pl-14 -mt-20">
-          <Link href="contact">
+        <div className=" pl-14 -mt-[70px]">
+          <Link href="/contact">
             <button className=" py-2 text-sm font-bold flex w-full justify-center border border-[#333333] rounded-lg ">
               お問い合わせへ
             </button>
@@ -100,7 +106,7 @@ const DesktopNav: React.FC<Props> = ({ news, users, products }) => {
           className="relative rounded-r-md sm:rounded-md w-full"
         />
         <div className="absolute rounded-sm top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-2 py-3 bg-blur-lg text-white ">
-          <p className="tracking-[4px]  font-black text-2xl  leading-none">
+          <p className="tracking-[4px]  font-bold text-4xl   leading-none">
             TechNova
           </p>
         </div>
@@ -157,7 +163,7 @@ const DesktopNav: React.FC<Props> = ({ news, users, products }) => {
             <VerticalText text="お問い合わせ" />
           </div>
           <div className="pl-16  pr-8  -mt-20">
-            <Link href="contact">
+            <Link href="/contact">
               <button className=" py-2 text-sm font-bold flex w-full justify-center border border-[#333333] rounded-lg ">
                 お問い合わせへ
               </button>

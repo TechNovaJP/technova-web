@@ -1,3 +1,4 @@
+import { Media } from "newt-client-js";
 import { Image } from "./image";
 import { Sys } from "./sys";
 
@@ -9,6 +10,11 @@ export interface Link {
 export interface News {
   _id: string;
   _sys: Sys;
+  meta?: {
+    title?: string;
+    description?: string;
+    ogImage?: Media;
+  };
   title: string;
   date: string;
   slug: string;

@@ -33,6 +33,7 @@ const MobileNav: React.FC<TeamProps> = ({
 }) => {
   const displayUsers = displayIndexes
     ? displayIndexes
+        .reverse()
         .map((index) => users[index])
         .filter((user) => user !== undefined)
     : users;
@@ -40,11 +41,11 @@ const MobileNav: React.FC<TeamProps> = ({
   return (
     <section
       id={id}
-      className="flex-col pt-16 pb-2 pl-4 pr-3 w-full flex items-start lg:hidden"
+      className="flex-col pt-16 pb-2 pl-4 pr-3 w-full flex items-start sm:hidden"
     >
       <VerticalText text={title} />
-      <div className="flex w-full gap-3 flex-col mt-8 pl-10 ">
-        {displayUsers.map((user) => (
+      <div className="flex w-full gap-3 flex-col-reverse mt-8 pl-10 ">
+        {displayUsers.reverse().map((user) => (
           <div
             key={user._id}
             className="w-full border flex justify-between items-center bg-white shadow-xl p-2 rounded-md"
@@ -59,10 +60,10 @@ const MobileNav: React.FC<TeamProps> = ({
               />
               <div className="pl-4">
                 <div className="flex font-bold text-sm text-[#333333] items-center justify-start w-full pt-4">
-                  <p>{user.role}</p>
+                  <p className="mr-2">{user.role}</p>
                   <p>{user.graduationYear}</p>
                 </div>
-                <p className="text-base font-bold text-[#333333] pt-1 pb-3">
+                <p className="text-sm font-medium text-[#333333] pt-1 pb-3">
                   {user.fullName}
                 </p>
               </div>
@@ -104,7 +105,7 @@ const DesktopNav: React.FC<TeamProps> = ({
   return (
     <section
       id={id}
-      className="flex-col pt-16 pb-2 pl-4 pr-4 w-full lg:flex items-start hidden"
+      className="flex-col pt-16 pb-2 pl-4 pr-4 w-full sm:flex items-start hidden"
     >
       <VerticalText text={title} />
       <div className="flex w-full gap-3 mt-8 pl-14">
@@ -121,7 +122,8 @@ const DesktopNav: React.FC<TeamProps> = ({
               height={150}
             />
             <div className="flex font-bold text-sm text-[#333333] items-center justify-center w-full pt-4">
-              <p>{`${user.role} ${user.graduationYear}`}</p>
+              <p className="mr-3 ">{user.role}</p>
+              <p>{user.graduationYear}</p>
             </div>
             <p className="text-sm font-bold text-[#333333] pt-1 pb-3">
               {user.fullName}

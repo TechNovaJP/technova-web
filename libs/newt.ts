@@ -63,3 +63,24 @@ export const getNews = cache(async () => {
   });
   return items;
 });
+
+export const getArticleBySlug = cache(async (slug: string) => {
+  const article = await client.getFirstContent<News>({
+    appUid: "tech-nova",
+    modelUid: "news",
+    query: {
+      slug,
+      select: [
+        "_id",
+        "_sys",
+        "title",
+        "date",
+        "slug",
+        "image",
+        "content",
+        "meta",
+      ],
+    },
+  });
+  return article;
+});

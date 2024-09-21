@@ -20,18 +20,18 @@ const NAV_LINKS: NavLink[] = [
 const Footer: React.FC = () => {
   return (
     <footer className="w-full z-30 flex flex-col pt-12 items-center p-4 bg-[#323232] relative">
-      <nav className="hidden md:flex items-center justify-center gap-10 font-text ">
+      <nav className="hidden md:flex items-center justify-center gap-10">
         {NAV_LINKS.map((link) => (
           <Link
             key={link.href}
             href={link.href}
-            className="text-base text-white tracking-wider font-bold hover:text-[#050f77] border-b-2 border-transparent hover:border-[#050f77] pb-1"
+            className="text-base text-white tracking-wider font-bold sm:font-black hover:text-[#050f77] border-b-2 border-transparent hover:border-[#050f77] pb-1"
           >
             {link.label}
           </Link>
         ))}
       </nav>
-      <Link href="/" className="mt-8 mb-16 ">
+      <Link href="/" className="sm:mt-8 sm:mb-16 mt-4 mb-8 ">
         <div className="flex items-center">
           <Image
             src="/TechNova.png"
@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
             width={44}
             height={44}
           />
-          <h1 className="text-[22px] text-white font-black font-logo">
+          <h1 className="sm:text-[22px] text-[18px] text-white font-black ">
             Tech Nova
           </h1>
         </div>

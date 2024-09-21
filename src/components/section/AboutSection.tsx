@@ -28,7 +28,7 @@ const MobileNav: React.FC<AboutSectionProps> = ({
     >
       <VerticalText text={title} />
       <div className="sm:px-20 pl-10">
-        <h2 className="whitespace-pre-line sm:mb-10 mb-6 tracking-widest lg:text-4xl md:text-[28px] text-xl font-black leading-relaxed">
+        <h2 className="whitespace-pre-line sm:mb-10 mb-6 tracking-widest lg:text-4xl md:text-[28px] text-xl font-bold sm:font-black leading-relaxed">
           {heading}
         </h2>
         <p className="whitespace-pre-line mb-12 text-xs tracking-[3px]">
@@ -69,7 +69,7 @@ const DesktopNav: React.FC<AboutSectionProps> = ({
         <h2 className="whitespace-pre-line   sm:mb-10 mb-6 tracking-widest lg:text-4xl md:text-[28px] md:leading-10 lg:leading-[50px]  text-xl font-black ">
           {heading}
         </h2>
-        <p className="whitespace-pre-line mb-12 text-xs tracking-[3px]">
+        <p className="whitespace-pre-line mb-12 text-base tracking-[3px]">
           {description}
         </p>
         <Image

@@ -3,12 +3,14 @@ import Image from "next/image";
 import VerticalText from "../VerticalItem/VerticalText";
 import ViewButton from "../Button/ViewButton";
 import { formatDate } from "@/utils/formatDate";
+import Link from "next/link";
 
 interface NewsItem {
   _id: string;
   image: { src: string; altText?: string };
   title: string;
   date: string;
+  slug: string;
 }
 
 interface InfoProps {
@@ -38,9 +40,11 @@ const MobileNav: React.FC<InfoProps> = ({ news, title, id, showButton }) => {
                   width={100}
                   height={60}
                 />
-                <p className="ml-4 font-bold">{newsItem.title}</p>
+                <p className="ml-4 font-bold sm:text-base text-xs">
+                  {newsItem.title}
+                </p>
               </div>
-              <p className="text-sm font-bold w-full flex justify-end text-slate-300">
+              <p className="text-xs font-bold w-full flex justify-end text-slate-300">
                 {formatDate(newsItem.date)}
               </p>
             </div>
@@ -66,7 +70,9 @@ const DesktopNav: React.FC<InfoProps> = ({ news, title, id, showButton }) => {
         <VerticalText text={title} />
       </div>
       {news.map((newsItem) => (
-        <div
+        <Link
+          href={`/info/${newsItem.slug}`}
+          passHref
           key={newsItem._id}
           className="w-full flex justify-between items-center bg-white pr-2 pl-4 py-8 border-y hover:border hover:shadow-md hover:rounded-lg mb-4"
         >
@@ -85,7 +91,7 @@ const DesktopNav: React.FC<InfoProps> = ({ news, title, id, showButton }) => {
               {formatDate(newsItem.date)}
             </p>
           </div>
-        </div>
+        </Link>
       ))}
       <ViewButton linkUrl="/info" linkText="view more" isVisible={showButton} />
     </section>
@@ -112,7 +118,12 @@ const InfoSection: React.FC<InfoProps> = ({
         id={id}
         showButton={showButton}
       />
-      <MobileNav news={displayNews} title={title} id={id} />
+      <MobileNav
+        news={displayNews}
+        title={title}
+        id={id}
+        showButton={showButton}
+      />
     </>
   );
 };
