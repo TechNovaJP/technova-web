@@ -18,10 +18,10 @@ const CenteredTextOverlay: React.FC<CenteredTextOverlayProps> = ({
         priority
         className="relative rounded-r-md sm:rounded-md w-full"
       />
-      <div className="absolute rounded-sm  top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-2 py-3 bg-blur-lg text-white bg-[#000000B3] w-fit">
-        <p className="tracking-[4px] [writing-mode:vertical-rl] font-black text-[18px] leading-none">
+      <div className="absolute   top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  bg-blur-lg text-white  w-fit">
+        <span className="tracking-[4px] w-fit  [writing-mode:vertical-rl] rounded-sm bg-[#000000B3] p-2 py-3 sm:font-black font-medium text-sm smt:ext-[18px] leading-none">
           {text}
-        </p>
+        </span>
       </div>
     </div>
   );

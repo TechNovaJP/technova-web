@@ -20,7 +20,7 @@ export default function About() {
       <AboutSection
         title="ミッション"
         id="mission"
-        heading={`日常に新たな選択肢をもたらし、\n生活に彩りを`}
+        heading={`日常に新たな選択肢をもたらし、生活に彩りを`}
         description={`私たちのコミュニティは、日常生活に新しい選択肢（サービス）を提供することで、人々の生活に多様性と豊かさをもたらします。\n技術の力を利用して、日々の生活に彩りを加える新しい方法を探求し、それを共有することで、人々の生活をより充実したものにします。`}
         image={missionImage}
         showButton={false}
